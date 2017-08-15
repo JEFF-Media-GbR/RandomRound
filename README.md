@@ -16,7 +16,7 @@ Um RandomRound nach /usr/local/bin/randomround zu installieren, gib folgendes ei
 Eine Liste mit möglichen Parametern findest du mit ```randomround -h```
 
 ## Beispiele
-Wer muss den Bierkasten zahlen? Wähle zufällig eine aus den Personen Martin, Angela und Horst aus:
+Wer muss den Bierkasten zahlen? Wähle zufällig jemand aus den Personen Martin, Angela und Horst aus:
 
 > ```randomround -b "Martin Angela Horst"```  
 > oder  
