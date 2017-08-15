@@ -73,8 +73,8 @@ if [ "$MODE" == "Single" ]; then
         if [ "$verbose" -eq 1 ]; then
                 echo "RND=$RND"
         fi
-        TEXT=${NAMEN[$RND]}" wurde ausgewählt.\n"
-        echo -e $TEXT
+        TEXT=${NAMEN[$RND]}" wurde ausgewählt.\\n"
+        echo -e "$TEXT"
         if [ "$verbose" -eq 1 ]; then
                 echo "(shuf -i 0-$LENGTH -n 1 = $RND)"
         fi
@@ -90,18 +90,20 @@ elif [ "$MODE" == "Multi" ]; then
                 RND=${SEQ[$i]}
                 TEXT="$TEXT""$k. ${NAMEN[$RND]}\n"
         done
-        echo -e $TEXT
+        echo -e "$TEXT"
         if [ "$verbose" -eq 1 ]; then
                 echo "(seq 0 $LENGTH | shuf)"
         fi
 fi
 # Log
 if [ "$log" -eq 1 ] && [ ! -v "$TEXT" ]; then
-        touch $logfile
-        echo "==============================================" >> $logfile
-        echo -n " - R a n d o m   R o u n d -" >> $logfile
-        date +"%x %T" >> $logfile
-        echo -e $TEXT >> $logfile
+        touch "$logfile"
+        {
+            echo "=============================================="
+            echo -n " - R a n d o m   R o u n d - "
+            date +"%x %T"
+            echo -e "$TEXT"
+        } >> "$logfile"
 fi
 
 
