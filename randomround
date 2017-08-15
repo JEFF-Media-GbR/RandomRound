@@ -83,7 +83,7 @@ elif [ "$MODE" == "Multi" ]; then
         TEXT=""
         SEQ=( $(seq 0 $LENGTH | shuf) )
         if [ "$verbose" -eq 1 ]; then
-                echo "SEQ|shuf=$SEQ"
+                echo 'SEQ|shuf='"${SEQ[@]}"
         fi
         for (( i=0; i<$LENGTH+1; i++ )); do
                 k=$(($i+1))
