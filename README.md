@@ -41,7 +41,9 @@ Wie spiele ich Schere-Stein-Papier, ohne berechnbar zu sein? Generiere eine zuf�
 
 > ```randomround -r```  
 > oder  
-> ```randomround -b "Schere Stein Papier"```
+> ```randomround -b "Schere Stein Papier"```  
+> oder  
+> ```randomround``` und anschließend ```Schere Stein Papier``` eingeben und mit Enter bestätigen
 
 ## Sonstiges
 RandomRound speichert in der Standardeinstellung jeden Output unter `~/.randomround.log`, um eine nachträgliche Überprüfung des Ergebnisses zu ermöglichen. Dies kann durch die Nutzung des Parameters `-L` verhindert werden.
