@@ -42,6 +42,8 @@ while getopts "rh?vab:L" opt; do
     esac
 done
 
+command -v shuf >/dev/null 2>&1 || { echo >&2 "Fehler: Kommando \"shuf\" nicht gefunden. Beende."; exit 1; }
+
 shift $((OPTIND-1))
 [ "$1" = "--" ] && shift
 
