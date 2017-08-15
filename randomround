@@ -1,0 +1,100 @@
+#!/bin/bash
+
+# RandomRound Version 20.1.2017-3 von mfnalex (mail <at> jeff-media.de)
+# jeff-media.de // seriöse-alternative.de // jeffclan.de // spot420.de // konfliktpartei.de
+
+# Default-Parameter
+OPTIND=1
+MODE="Single"
+verbose=0
+log=1
+logfile="$HOME/.randomround.log"
+
+while getopts "h?vab:L" opt; do
+    case "$opt" in
+    h|\?)
+        echo "Benutzung:"
+        echo -e "randomround [-a] [-b \"Subjekt1 Subjekt2 ...\"] [-h] [-L] [-v]"
+        echo
+        echo "Bedeutung der Parameter:"
+        echo " -a: Bildet komplette Runde"
+        echo " -b: Übergibt direkt die Namen der Subjekte"
+        echo " -h: Zeigt diesen Hilfetext"
+        echo " -L: Deaktiviere Log-Funktion"
+        echo " -v: Verbose (Debug-Modus und Anzeigen der Zufallsberechnungen)"
+        exit 0
+        ;;
+    v)  verbose=1
+        ;;
+    a)  MODE="Multi"
+        ;;
+    b)  EINGABE=$OPTARG
+        ;;
+    L)  log=0
+        ;;
+    esac
+done
+
+shift $((OPTIND-1))
+[ "$1" = "--" ] && shift
+
+echo -n " - R a n d o m   R o u n d -"
+date +"%x %T"
+echo
+
+if [ -z "$EINGABE" ]; then
+        echo "Welche Subjekte kommen in Betracht?"
+        echo "(Namen durch Leerzeichen getrennt eingeben)"
+        read EINGABE
+        echo
+fi
+
+IFS=' ' read -r -a NAMEN <<< "$EINGABE"
+LENGTH=$((${#NAMEN[@]}-1))
+
+if [ "$verbose" -eq 1 ]; then
+        echo "MODE=$MODE"
+        echo "EINGABE=$EINGABE"
+        echo "LENGTH=$LENGTH"
+        echo "SEQ=$(seq 0 $LENGTH)"
+        echo
+fi
+
+# Single Mode gibt nur ein Subjekt aus
+if [ "$MODE" == "Single" ]; then
+        RND=$(shuf -i 0-$LENGTH -n 1)
+        if [ "$verbose" -eq 1 ]; then
+                echo "RND=$RND"
+        fi
+        TEXT=${NAMEN[$RND]}" wurde ausgewählt.\n"
+        echo -e $TEXT
+        if [ "$verbose" -eq 1 ]; then
+                echo "(shuf -i 0-$LENGTH -n 1 = $RND)"
+        fi
+# Multi Mode gibt eine Runde aus allen Subjekten aus
+elif [ "$MODE" == "Multi" ]; then
+        TEXT=""
+        SEQ=( $(seq 0 $LENGTH | shuf) )
+        if [ "$verbose" -eq 1 ]; then
+                echo "SEQ|shuf=$SEQ"
+        fi
+        for (( i=0; i<$LENGTH+1; i++ )); do
+                k=$(($i+1))
+                RND=${SEQ[$i]}
+                TEXT="$TEXT""$k. ${NAMEN[$RND]}\n"
+        done
+        echo -e $TEXT
+        if [ "$verbose" -eq 1 ]; then
+                echo "(seq 0 $LENGTH | shuf)"
+        fi
+fi
+# Log
+if [ "$log" -eq 1 ] && [ ! -v "$TEXT" ]; then
+        touch $logfile
+        echo "==============================================" >> $logfile
+        echo -n " - R a n d o m   R o u n d -" >> $logfile
+        date +"%x %T" >> $logfile
+        echo -e $TEXT >> $logfile
+fi
+
+
