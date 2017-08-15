@@ -14,7 +14,7 @@ Um RandomRound nach /usr/local/bin/randomround zu installieren, gib folgendes ei
 
 ## Benutzung und Parameter
 Benutzung:
-  `randomround [-r] [-a] [-b \"Subjekt1 Subjekt2 ...\"] [-h] [-L] [-v]`  
+  `randomround [-r] [-a] [-b "Subjekt1 Subjekt2 ..."] [-h] [-L] [-v]`  
 
 Parameter:  
   -r: RPS-Modus. Erfordert keine weiteren Parameter  
