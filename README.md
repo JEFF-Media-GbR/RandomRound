@@ -3,4 +3,4 @@ Erstellt eine Liste aller gegebenen Subjekte in zufälliger Reihenfolge oder gib
 
 # Beispiele
 Wählt zufällig eine aus den Personen Martin, Angela und Horst aus:
-`randomround -b "Martin Angela Horst"` oder `randomround` und anschließend "Martin Angela Horst" eingeben und mit Enter bestätigen
+```randomround -b "Martin Angela Horst"``` oder ```randomround``` und anschließend "Martin Angela Horst" eingeben und mit Enter bestätigen
