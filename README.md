@@ -29,13 +29,13 @@ Wer muss den Bierkasten zahlen? Wähle zufällig jemand aus den Personen Martin,
 
 > ```randomround -b "Martin Angela Horst"```  
 > oder  
-> ```randomround``` und anschließend "Martin Angela Horst" eingeben und mit Enter bestätigen
+> ```randomround``` und anschließend ```Martin Angela Horst``` eingeben und mit Enter bestätigen
 
 Wie geht die Wahl aus? Generiere eine zufällige Reihenfolge aus den Personen Donald, Bernie und Hillary:
 
 > ```randomround -ab "Donald Bernie Hillary"```  
 > oder  
-> ```randomround -a``` und anschließend "Donald Bernie Hillary" eingeben und mit Enter bestätigen
+> ```randomround -a``` und anschließend ```Donald Bernie Hillary``` eingeben und mit Enter bestätigen
 
 Wie spiele ich Schere-Stein-Papier, ohne berechnbar zu sein? Generiere eine zufällige Geste für Schere-Stein-Papier:
 
