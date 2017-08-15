@@ -27,7 +27,6 @@ while getopts "rh?vab:L" opt; do
         ;;
     r)  MODE="RPS"
         EINGABE="Schere Stein Papier"
-        echo "Debug"
         ;;
     v)  verbose=1
         ;;
