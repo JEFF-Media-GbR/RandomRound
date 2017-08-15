@@ -12,8 +12,17 @@ Um RandomRound nach /usr/local/bin/randomround zu installieren, gib folgendes ei
 
 (Nur root hat Schreibzugriff auf /usr/local/bin/. Für einen anderen Installationspfad einfach die letzte Zeile anpassen.)
 
-## Parameter
-Eine Liste mit möglichen Parametern findest du mit ```randomround -h```
+## Benutzung und Parameter
+Benutzung:
+  `randomround [-r] [-a] [-b \"Subjekt1 Subjekt2 ...\"] [-h] [-L] [-v]`  
+
+Parameter:  
+  -r: RPS-Modus. Erfordert keine weiteren Parameter  
+  -a: Bildet komplette Runde  
+  -b: Übergibt direkt die Namen der Subjekte  
+  -h: Zeigt diesen Hilfetext  
+  -L: Deaktiviere Log-Funktion  
+  -v: Verbose (Debug-Modus und Anzeigen der Zufallsberechnungen)
 
 ## Beispiele
 Wer muss den Bierkasten zahlen? Wähle zufällig jemand aus den Personen Martin, Angela und Horst aus:
