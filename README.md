@@ -6,9 +6,11 @@ RandomRound benötigt die BASH Shell.
 
 Um RandomRound nach /usr/local/bin/randomround zu installieren, gib folgendes ein:
 
-> git clone https://github.com/JEFF-Media-GbR/RandomRound.git && cd RandomRound  
-> chmod +x randomround  
-> sudo mv randomround /usr/local/bin/  
+```
+git clone https://github.com/JEFF-Media-GbR/RandomRound.git && cd RandomRound/  
+chmod +x randomround  
+sudo mv randomround /usr/local/bin/  
+```
 
 (Nur root hat Schreibzugriff auf /usr/local/bin/. Für einen anderen Installationspfad einfach die letzte Zeile anpassen.)
 
