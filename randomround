@@ -43,7 +43,7 @@ done
 shift $((OPTIND-1))
 [ "$1" = "--" ] && shift
 
-echo -n " - R a n d o m   R o u n d -"
+echo -n " - R a n d o m   R o u n d - "
 date +"%x %T"
 echo
 
