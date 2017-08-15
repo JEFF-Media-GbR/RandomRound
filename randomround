@@ -10,19 +10,24 @@ verbose=0
 log=1
 logfile="$HOME/.randomround.log"
 
-while getopts "h?vab:L" opt; do
+while getopts "rh?vab:L" opt; do
     case "$opt" in
     h|\?)
         echo "Benutzung:"
-        echo -e "randomround [-a] [-b \"Subjekt1 Subjekt2 ...\"] [-h] [-L] [-v]"
+        echo -e "randomround [-r] [-a] [-b \"Subjekt1 Subjekt2 ...\"] [-h] [-L] [-v]"
         echo
         echo "Bedeutung der Parameter:"
+        echo " -r: RPS-Modus. Erfordert keine weiteren Parameter"
         echo " -a: Bildet komplette Runde"
         echo " -b: Übergibt direkt die Namen der Subjekte"
         echo " -h: Zeigt diesen Hilfetext"
         echo " -L: Deaktiviere Log-Funktion"
         echo " -v: Verbose (Debug-Modus und Anzeigen der Zufallsberechnungen)"
         exit 0
+        ;;
+    s)
+        MODE="RPS"
+        EINGABE="Schere Stein Papier"
         ;;
     v)  verbose=1
         ;;
