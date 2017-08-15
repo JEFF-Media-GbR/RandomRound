@@ -98,7 +98,7 @@ elif [ "$MODE" == "Multi" ]; then
         fi
 fi
 # Log
-if [ "$log" -eq 1 ] && [ ! -v "$TEXT" ]; then
+if [ "$log" -eq 1 ] && [ ! -z "$TEXT" ]; then
         touch "$logfile"
         {
             echo "=============================================="
