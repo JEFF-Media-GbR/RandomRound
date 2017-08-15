@@ -25,8 +25,7 @@ while getopts "rh?vab:L" opt; do
         echo " -v: Verbose (Debug-Modus und Anzeigen der Zufallsberechnungen)"
         exit 0
         ;;
-    r)  MODE="RPS"
-        EINGABE="Schere Stein Papier"
+    r)  EINGABE="Schere Stein Papier"
         ;;
     v)  verbose=1
         ;;
